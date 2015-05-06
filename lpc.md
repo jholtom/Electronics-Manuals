@@ -1,4 +1,4 @@
-###LPC111x and LPC8xx Series Cortex-M0+ Arm Processors
+###LPC111x and LPC8xx Series Cortex-M0+ ARM Processors
 > 32-bit Breadboarded processor. mind. blown.
 
 ####LPC111x
