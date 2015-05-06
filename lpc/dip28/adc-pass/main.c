@@ -1,6 +1,4 @@
-/* Simple tone generator program for the LPC1114
- * 
- */
+/* Simple ADC passthrough program for the LPC1114 */
 
 #include "lpc111x.h"
 void ConfigPins()
