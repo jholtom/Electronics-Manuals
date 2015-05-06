@@ -1,0 +1,28 @@
+<html>
+<head><Title>7 segment display using the LPC1114</title></head>
+<body>
+<h1>Baremetal programming of the LPC1114/FN28 microcontroller</h1><br>
+The LPC1114/FN28 processor is a DIP28 (breadboard friendly) ARM Cortex M0 microcontroller.
+It can be programmed using a hardware debug tool that supports Serial Wire Debug.  It can 
+also be programmed using a simple USB to serial converter.  This method is called In-System-Programming
+(ISP).  It does ,not allow you debug however it is useful nevertheless.  It is certainly very low
+cost.  Using this approach it is possible to set up an ARM Cortex development platform for less 
+than 10 euros.  <br>
+<H2>Driving a seven segment display</H2><br>
+<center><img src="display/display.jpg"  height="60%"></center>
+This example drives a seven segment display with a count that rolls over at 9999.  Files and documentation
+are available <a href=display/display.tar.gz>here</a>.<br>
+The toolchain (compiler etc) can be obtained from <a href=https://launchpad.net/gcc-arm-embedded>https://launchpad.net/gcc-arm-embedded</a>.  This works
+for many operating systems.<br>
+The software tool that downloads code to your device is called lpc21isp and can be found here <a href=http://sourceforge.net/projects/lpc21isp/>http://sourceforge.net/projects/lpc21isp/</a><br>
+If you can't compile this tool (e.g. if you are on a Windows machine) then you might try <a href=http://www.flashmagictool.com/>Flashmagic</a><br>
+<H2>Progamming</H2>
+The makefile provided with this example creats a file called main.hex (Intel Hex format) which must be downloaded to the microcontroller.  To do this you 
+must press the reset and mode buttons (see wiring.pdf) together.  You then release the reset button first followed by the mode button.  The chip
+should now be in ISP mode allowing FlashMagic or lpc21isp to download the code to it.  When download is complete press reset once more and the 
+program should run.
+<H2>More information</H2>
+This page will be further edited in time and a number of other examples will be added.  If you need more information contact frank DOT duignan AT dit DOT ie. :)
+
+</body>
+</html>

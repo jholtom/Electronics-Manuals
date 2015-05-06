@@ -1,0 +1,77 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000000000000 0x0000000000001000 xr
+RAM              0x0000000010000000 0x0000000000000400 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000000                . = ORIGIN (FLASH)
+
+.text           0x0000000000000000      0x114
+ *(.isr_vectors)
+ .isr_vectors   0x0000000000000000        0x8 crt0.o
+                0x0000000000000008                . = ALIGN (0x4)
+                0x00000000000000c4                . = 0xc4
+ *fill*         0x0000000000000008       0xbc 
+                0x00000000000000c4                __vec_end__ = .
+ *(.text)
+ .text          0x00000000000000c4       0x4c main.o
+                0x00000000000000c4                main
+ .text          0x0000000000000110        0x4 crt0.o
+                0x0000000000000110                Reset_Handler
+                0x0000000000000114                . = ALIGN (0x4)
+                0x0000000000000114                __end_text__ = .
+                0x0000000010000400                __stack_top = (ORIGIN (RAM) + 0x400)
+                0x0000000000000114                __end = .
+                0x0000000000000114                PROVIDE (etext, __end_text__)
+                0x0000000000000114                PROVIDE (end, .)
+LOAD main.o
+LOAD crt0.o
+START GROUP
+LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a
+LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/libc.a
+END GROUP
+OUTPUT(main.elf elf32-littlearm)
+
+.data           0x0000000000000114        0x0
+ .data          0x0000000000000114        0x0 main.o
+ .data          0x0000000000000114        0x0 crt0.o
+
+.igot.plt       0x0000000000000114        0x0
+ .igot.plt      0x0000000000000000        0x0 crt0.o
+
+.glue_7         0x0000000000000114        0x0
+ .glue_7        0x0000000000000000        0x0 linker stubs
+
+.glue_7t        0x0000000000000114        0x0
+ .glue_7t       0x0000000000000000        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000000114        0x0
+ .vfp11_veneer  0x0000000000000000        0x0 linker stubs
+
+.v4_bx          0x0000000000000114        0x0
+ .v4_bx         0x0000000000000000        0x0 linker stubs
+
+.iplt           0x0000000000000114        0x0
+ .iplt          0x0000000000000000        0x0 crt0.o
+
+.rel.dyn        0x0000000000000114        0x0
+ .rel.iplt      0x0000000000000000        0x0 crt0.o
+
+.bss            0x0000000000000114        0x0
+ .bss           0x0000000000000114        0x0 main.o
+ .bss           0x0000000000000114        0x0 crt0.o
+
+.comment        0x0000000000000000       0x70
+ .comment       0x0000000000000000       0x70 main.o
+                                         0x71 (size before relaxing)
+
+.ARM.attributes
+                0x0000000000000000       0x30
+ .ARM.attributes
+                0x0000000000000000       0x32 main.o
+ .ARM.attributes
+                0x0000000000000032       0x22 crt0.o

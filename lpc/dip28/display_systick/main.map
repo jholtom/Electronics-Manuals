@@ -1,0 +1,175 @@
+Archive member included because of file (symbol)
+
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+                              main.o (__aeabi_idiv)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o) (__aeabi_idiv0)
+
+Allocating common symbols
+Common symbol       size              file
+
+DisplayMemory       0x10              main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x0000000000000000 0x0000000000008000
+ram              0x0000000010000000 0x0000000000001000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD init.o
+LOAD main.o
+LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a
+                0x0000000000000000                . = ORIGIN (flash)
+
+.text           0x0000000000000000      0x61c
+ *(.vectors)
+ .vectors       0x0000000000000000       0xc0 init.o
+                0x0000000000000000                Vectors
+ *(.text)
+ .text          0x00000000000000c0       0xcc init.o
+                0x00000000000000c0                clock_init
+                0x000000000000010c                init
+                0x0000000000000184                Default_Handler
+ .text          0x000000000000018c      0x2ac main.o
+                0x000000000000018c                SysTick
+                0x000000000000022c                initSysTick
+                0x0000000000000260                delay
+                0x000000000000027c                DisplayNumber
+                0x0000000000000324                RefreshDisplay
+                0x00000000000003ac                ConfigPins
+                0x0000000000000408                main
+ .text          0x0000000000000438      0x1e0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+                0x0000000000000438                __aeabi_idiv
+                0x0000000000000438                __divsi3
+                0x0000000000000604                __aeabi_idivmod
+ .text          0x0000000000000618        0x4 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0000000000000618                __aeabi_ldiv0
+                0x0000000000000618                __aeabi_idiv0
+
+.glue_7         0x000000000000061c        0x0
+ .glue_7        0x0000000000000000        0x0 linker stubs
+
+.glue_7t        0x000000000000061c        0x0
+ .glue_7t       0x0000000000000000        0x0 linker stubs
+
+.vfp11_veneer   0x000000000000061c        0x0
+ .vfp11_veneer  0x0000000000000000        0x0 linker stubs
+
+.v4_bx          0x000000000000061c        0x0
+ .v4_bx         0x0000000000000000        0x0 linker stubs
+
+.iplt           0x000000000000061c        0x0
+ .iplt          0x0000000000000000        0x0 init.o
+
+.rel.dyn        0x000000000000061c        0x0
+ .rel.iplt      0x0000000000000000        0x0 init.o
+
+.rodata         0x000000000000061c       0x14
+ .rodata        0x000000000000061c       0x14 main.o
+                0x000000000000061c                digits
+                0x0000000010000000                . = ORIGIN (ram)
+
+.data           0x0000000010000000        0x4 load address 0x0000000000000630
+                0x0000000000000630                INIT_DATA_VALUES = LOADADDR (.data)
+                0x0000000010000000                INIT_DATA_START = .
+ *(.data)
+ .data          0x0000000010000000        0x0 init.o
+ .data          0x0000000010000000        0x4 main.o
+ .data          0x0000000010000004        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+ .data          0x0000000010000004        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0000000010000004                INIT_DATA_END = .
+                0x0000000010000004                BSS_START = .
+
+.igot.plt       0x0000000010000004        0x0 load address 0x0000000000000634
+ .igot.plt      0x0000000000000000        0x0 init.o
+
+.bss            0x0000000010000004       0x10 load address 0x0000000000000634
+ *(.bss)
+ .bss           0x0000000010000004        0x0 init.o
+ .bss           0x0000000010000004        0x0 main.o
+ .bss           0x0000000010000004        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+ .bss           0x0000000010000004        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+ COMMON         0x0000000010000004       0x10 main.o
+                0x0000000010000004                DisplayMemory
+                0x0000000010000014                BSS_END = .
+OUTPUT(main.elf elf32-littlearm)
+
+.debug_info     0x0000000000000000      0x260
+ .debug_info    0x0000000000000000      0x116 init.o
+ .debug_info    0x0000000000000116      0x14a main.o
+
+.debug_abbrev   0x0000000000000000      0x20c
+ .debug_abbrev  0x0000000000000000       0xe8 init.o
+ .debug_abbrev  0x00000000000000e8      0x124 main.o
+
+.debug_aranges  0x0000000000000000       0x40
+ .debug_aranges
+                0x0000000000000000       0x20 init.o
+ .debug_aranges
+                0x0000000000000020       0x20 main.o
+
+.debug_line     0x0000000000000000       0xd2
+ .debug_line    0x0000000000000000       0x53 init.o
+ .debug_line    0x0000000000000053       0x7f main.o
+
+.debug_str      0x0000000000000000      0x198
+ .debug_str     0x0000000000000000      0x12c init.o
+                                        0x131 (size before relaxing)
+ .debug_str     0x000000000000012c       0x6c main.o
+                                        0x11c (size before relaxing)
+
+.comment        0x0000000000000000       0x70
+ .comment       0x0000000000000000       0x70 init.o
+                                         0x71 (size before relaxing)
+ .comment       0x0000000000000000       0x71 main.o
+
+.ARM.attributes
+                0x0000000000000000       0x31
+ .ARM.attributes
+                0x0000000000000000       0x31 init.o
+ .ARM.attributes
+                0x0000000000000031       0x31 main.o
+ .ARM.attributes
+                0x0000000000000062       0x1e /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x0000000000000080       0x1e /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x0000000000000000      0x168
+ .debug_frame   0x0000000000000000       0x68 init.o
+ .debug_frame   0x0000000000000068       0xe0 main.o
+ .debug_frame   0x0000000000000148       0x20 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+
+Cross Reference Table
+
+Symbol                                            File
+BSS_END                                           init.o
+BSS_START                                         init.o
+ConfigPins                                        main.o
+Default_Handler                                   init.o
+DisplayMemory                                     main.o
+DisplayNumber                                     main.o
+INIT_DATA_END                                     init.o
+INIT_DATA_START                                   init.o
+INIT_DATA_VALUES                                  init.o
+RefreshDisplay                                    main.o
+SysTick                                           main.o
+                                                  init.o
+Vectors                                           init.o
+__aeabi_idiv                                      /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+                                                  main.o
+__aeabi_idiv0                                     /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+__aeabi_idivmod                                   /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+                                                  main.o
+__aeabi_ldiv0                                     /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+__divsi3                                          /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+clock_init                                        init.o
+delay                                             main.o
+digits                                            main.o
+init                                              init.o
+initSysTick                                       main.o
+main                                              main.o
+                                                  init.o

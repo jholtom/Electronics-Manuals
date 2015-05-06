@@ -1,0 +1,98 @@
+
+main.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <main-0xc4>:
+   0:	10000400 	andne	r0, r0, r0, lsl #8
+   4:	00000111 	andeq	r0, r0, r1, lsl r1
+	...
+
+000000c4 <main>:
+  c4:	b580      	push	{r7, lr}
+  c6:	b082      	sub	sp, #8
+  c8:	af00      	add	r7, sp, #0
+  ca:	4b0d      	ldr	r3, [pc, #52]	; (100 <main+0x3c>)
+  cc:	2241      	movs	r2, #65	; 0x41
+  ce:	4252      	negs	r2, r2
+  d0:	601a      	str	r2, [r3, #0]
+  d2:	4b0c      	ldr	r3, [pc, #48]	; (104 <main+0x40>)
+  d4:	4a0b      	ldr	r2, [pc, #44]	; (104 <main+0x40>)
+  d6:	6812      	ldr	r2, [r2, #0]
+  d8:	2104      	movs	r1, #4
+  da:	430a      	orrs	r2, r1
+  dc:	601a      	str	r2, [r3, #0]
+  de:	4b0a      	ldr	r3, [pc, #40]	; (108 <main+0x44>)
+  e0:	4a09      	ldr	r2, [pc, #36]	; (108 <main+0x44>)
+  e2:	6812      	ldr	r2, [r2, #0]
+  e4:	2104      	movs	r1, #4
+  e6:	430a      	orrs	r2, r1
+  e8:	601a      	str	r2, [r3, #0]
+  ea:	4b08      	ldr	r3, [pc, #32]	; (10c <main+0x48>)
+  ec:	607b      	str	r3, [r7, #4]
+  ee:	e002      	b.n	f6 <main+0x32>
+  f0:	687b      	ldr	r3, [r7, #4]
+  f2:	3b01      	subs	r3, #1
+  f4:	607b      	str	r3, [r7, #4]
+  f6:	687b      	ldr	r3, [r7, #4]
+  f8:	2b00      	cmp	r3, #0
+  fa:	dcf9      	bgt.n	f0 <main+0x2c>
+  fc:	e7ef      	b.n	de <main+0x1a>
+  fe:	46c0      	nop			; (mov r8, r8)
+ 100:	4000c1c0 	andmi	ip, r0, r0, asr #3
+ 104:	a0002000 	andge	r2, r0, r0
+ 108:	a0002300 	andge	r2, r0, r0, lsl #6
+ 10c:	0003a980 	andeq	sl, r3, r0, lsl #19
+
+00000110 <Reset_Handler>:
+ 110:	e7d8      	b.n	c4 <main>
+ 112:	46c0      	nop			; (mov r8, r8)
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347 	bcc	10d0d24 <__end+0x10d0c10>
+   4:	4e472820 	cdpmi	8, 4, cr2, cr7, cr0, {1}
+   8:	6f542055 	svcvs	0x00542055
+   c:	20736c6f 	rsbscs	r6, r3, pc, ror #24
+  10:	20726f66 	rsbscs	r6, r2, r6, ror #30
+  14:	204d5241 	subcs	r5, sp, r1, asr #4
+  18:	65626d45 	strbvs	r6, [r2, #-3397]!	; 0xd45
+  1c:	64656464 	strbtvs	r6, [r5], #-1124	; 0x464
+  20:	6f725020 	svcvs	0x00725020
+  24:	73736563 	cmnvc	r3, #415236096	; 0x18c00000
+  28:	2973726f 	ldmdbcs	r3!, {r0, r1, r2, r3, r5, r6, r9, ip, sp, lr}^
+  2c:	392e3420 	stmdbcc	lr!, {r5, sl, ip, sp}
+  30:	3220332e 	eorcc	r3, r0, #-1207959552	; 0xb8000000
+  34:	30353130 	eorscc	r3, r5, r0, lsr r1
+  38:	20333033 	eorscs	r3, r3, r3, lsr r0
+  3c:	6c657228 	sfmvs	f7, 2, [r5], #-160	; 0xffffff60
+  40:	65736165 	ldrbvs	r6, [r3, #-357]!	; 0x165
+  44:	415b2029 	cmpmi	fp, r9, lsr #32
+  48:	652f4d52 	strvs	r4, [pc, #-3410]!	; fffff2fe <__stack_top+0xefffeefe>
+  4c:	6465626d 	strbtvs	r6, [r5], #-621	; 0x26d
+  50:	2d646564 	cfstr64cs	mvdx6, [r4, #-400]!	; 0xfffffe70
+  54:	2d395f34 	ldccs	15, cr5, [r9, #-208]!	; 0xffffff30
+  58:	6e617262 	cdpvs	2, 6, cr7, cr1, cr2, {3}
+  5c:	72206863 	eorvc	r6, r0, #6488064	; 0x630000
+  60:	73697665 	cmnvc	r9, #105906176	; 0x6500000
+  64:	206e6f69 	rsbcs	r6, lr, r9, ror #30
+  68:	32313232 	eorscc	r3, r1, #536870915	; 0x20000003
+  6c:	005d3032 	subseq	r3, sp, r2, lsr r0
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00002f41 	andeq	r2, r0, r1, asr #30
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000025 	andeq	r0, r0, r5, lsr #32
+  10:	726f4305 	rsbvc	r4, pc, #335544320	; 0x14000000
+  14:	2d786574 	cfldr64cs	mvdx6, [r8, #-464]!	; 0xfffffe30
+  18:	002b304d 	eoreq	r3, fp, sp, asr #32
+  1c:	4d070c06 	stcmi	12, cr0, [r7, #-24]	; 0xffffffe8
+  20:	04120109 	ldreq	r0, [r2], #-265	; 0x109
+  24:	01150114 	tsteq	r5, r4, lsl r1
+  28:	01180317 	tsteq	r8, r7, lsl r3
+  2c:	061e011a 			; <UNDEFINED> instruction: 0x061e011a
