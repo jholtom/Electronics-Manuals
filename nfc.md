@@ -2,13 +2,16 @@
 > flux, coils, EMF oh my!
 
 ####FSK Receiver and Decoder
-    * what is it?
-    * what it isn't.
+* What is it?
+
+* What it isn't.
 
 ####ASK Receiver and Decoder
-    * what is it?
-    * what it isn't.
+* What is it?
+
+* What it isn't.
 
 ####ASK Tag (Card)
-    * what is it?
-    * what it isn't.
+* What is it?
+
+* What it isn't.
