@@ -44,18 +44,29 @@ int ReadADC()
     // Wait for conversion to complete
     while((AD0GDR&BIT31)==0);
     // return the result
-    return ((AD0GDR>>6));
+    return ((AD0GDR>>6)&0x3ff);
 }
 void Output(int data)
 {
-    GPIO1DATA = data;
+    //GPIO1DATA = data;
+    GPIO1DATA |= BIT1;
+    GPIO1DATA |= BIT2;
+    GPIO1DATA |= BIT3;
+    GPIO1DATA |= BIT4;
+    GPIO1DATA |= BIT5;
+    GPIO1DATA |= BIT6;
+    GPIO1DATA |= BIT7;
+    GPIO1DATA |= BIT8;
+    GPIO1DATA &= ~BIT4;
+    GPIO1DATA &= ~BIT6;
+    GPIO1DATA &= ~BIT8;
 }
 int main()
 {	
     ConfigPins();
 
-    while(1) 
-    {
+//    while(1) 
+  //  {
         Output(ReadADC());
-    }    
+  //  }    
 }
