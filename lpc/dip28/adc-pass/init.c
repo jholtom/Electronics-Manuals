@@ -11,7 +11,7 @@
 void init(void);
 void clock_init();
 void Default_Handler(void);
-
+extern void SysTick(void);
 // The following are 'declared' in the linker script
 extern unsigned char  INIT_DATA_VALUES;
 extern unsigned char  INIT_DATA_START;
@@ -23,21 +23,21 @@ extern void isr_spi1(void);
 // by the linker script
 const void * Vectors[] __attribute__((section(".vectors"))) ={
 	(void *)0x10001000, 	/* Top of stack */ 
-	init,   		/* Reset Handler */
+	init,   			/* Reset Handler */
 	Default_Handler,	/* NMI */
 	Default_Handler,	/* Hard Fault */
 	0,	                /* Reserved */
-	0,                   	/* Reserved */
-	0,                   	/* Reserved */
-	0,                   	/* Reserved */
-	0,                   	/* Reserved */
-	0,                   	/* Reserved */
-	0,                   	/* Reserved */
+	0,                  /* Reserved */
+	0,                  /* Reserved */
+	0,                  /* Reserved */
+	0,                  /* Reserved */
+	0,                  /* Reserved */
+	0,                  /* Reserved */
 	Default_Handler,	/* SVC */
-	0,                   	/* Reserved */
-	0,                   	/* Reserved */
-	Default_Handler,     	/* PendSV */
-	Default_Handler,     	/* SysTick */		
+	0,                 	/* Reserved */
+	0,                 	/* Reserved */
+	Default_Handler,   	/* PendSV */
+	SysTick,     		/* SysTick */		
 /* External interrupt handlers follow */
 	Default_Handler, 	/* PIO0_0 */
 	Default_Handler, 	/* PIO0_1 */
