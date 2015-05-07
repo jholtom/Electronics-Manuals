@@ -11,7 +11,6 @@
 void init(void);
 void clock_init();
 void Default_Handler(void);
-extern void SysTick(void);
 // The following are 'declared' in the linker script
 extern unsigned char  INIT_DATA_VALUES;
 extern unsigned char  INIT_DATA_START;
@@ -37,7 +36,6 @@ const void * Vectors[] __attribute__((section(".vectors"))) ={
 	0,                 	/* Reserved */
 	0,                 	/* Reserved */
 	Default_Handler,   	/* PendSV */
-	SysTick,     		/* SysTick */		
 /* External interrupt handlers follow */
 	Default_Handler, 	/* PIO0_0 */
 	Default_Handler, 	/* PIO0_1 */
