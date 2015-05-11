@@ -1,6 +1,8 @@
 /* This program puts the output from the ADC onto the IO Pins */
 
 #include "lpc111x.h"
+#include <stdint.h>
+#include <stdlib.h>
 void delay(int dly)
 {
     while (dly--);
@@ -40,11 +42,11 @@ int ReadADC()
     // Wait for conversion to complete
     while((AD0GDR&BIT31)==0);
     // return the result
-    return ((AD0GDR>>6));
+    return ((AD0GDR>>8));
 }
-void Output(int data)
+void Output(uint8_t data)
 {
-    //GPIO1DATA = data;
+    GPIO1DATA = data;
 /*Manual writing works fine now
     GPIO1DATA |= BIT1;
     GPIO1DATA |= BIT2;
@@ -65,5 +67,6 @@ int main()
 while(1) 
     {
         Output(ReadADC());
+	delay(200);
     }    
 }
