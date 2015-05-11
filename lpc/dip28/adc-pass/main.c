@@ -17,13 +17,9 @@ void ConfigPins()
     IOCON_SWDIO_PIO1_3 |= BIT0;
     // Port 1 bit 4 behaves as a generic IO port by default
     // Port 1 bit 5 behaves as a generic IO port by default
-    // Port 1 bit 6 -> generic io
-    IOCON_PIO1_6 |= BIT0;
-    // Port 1 bit 7 -> generic io
-    IOCON_PIO1_7 |= BIT0;
-    // Port 1 bit 8 -> generic io
-    IOCON_PIO1_8 |= BIT0;
-    
+    // Port 1 bit 6 behaves as a generic IO port by default
+    // Port 1 bit 7 behaves as a generic IO port by default
+    // Port 1 bit 8 behaves as a generic IO port by default
     // Configure output addressing
     GPIO1DIR |= (BIT1+BIT2+BIT3+BIT4+BIT5+BIT6+BIT7+BIT8);
     GPIO1DATA=0;
@@ -44,11 +40,12 @@ int ReadADC()
     // Wait for conversion to complete
     while((AD0GDR&BIT31)==0);
     // return the result
-    return ((AD0GDR>>6)&0x3ff);
+    return ((AD0GDR>>6));
 }
 void Output(int data)
 {
     //GPIO1DATA = data;
+/*Manual writing works fine now
     GPIO1DATA |= BIT1;
     GPIO1DATA |= BIT2;
     GPIO1DATA |= BIT3;
@@ -59,14 +56,14 @@ void Output(int data)
     GPIO1DATA |= BIT8;
     GPIO1DATA &= ~BIT4;
     GPIO1DATA &= ~BIT6;
-    GPIO1DATA &= ~BIT8;
+    GPIO1DATA &= ~BIT8; */
 }
 int main()
 {	
     ConfigPins();
 
-//    while(1) 
-  //  {
+while(1) 
+    {
         Output(ReadADC());
-  //  }    
+    }    
 }

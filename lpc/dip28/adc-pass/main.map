@@ -13,7 +13,7 @@ LOAD main.o
 LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a
                 0x0000000000000000                . = ORIGIN (flash)
 
-.text           0x0000000000000000      0x354
+.text           0x0000000000000000      0x31c
  *(.vectors)
  .vectors       0x0000000000000000       0xbc init.o
                 0x0000000000000000                Vectors
@@ -22,34 +22,34 @@ LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/
                 0x00000000000000bc                clock_init
                 0x0000000000000108                init
                 0x0000000000000180                Default_Handler
- .text          0x0000000000000188      0x1cc main.o
+ .text          0x0000000000000188      0x194 main.o
                 0x0000000000000188                delay
                 0x00000000000001a4                ConfigPins
-                0x0000000000000264                ReadADC
-                0x000000000000029c                Output
-                0x0000000000000338                main
+                0x0000000000000234                ReadADC
+                0x0000000000000268                Output
+                0x0000000000000304                main
 
-.glue_7         0x0000000000000354        0x0
+.glue_7         0x000000000000031c        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000354        0x0
+.glue_7t        0x000000000000031c        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000354        0x0
+.vfp11_veneer   0x000000000000031c        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000354        0x0
+.v4_bx          0x000000000000031c        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000354        0x0
+.iplt           0x000000000000031c        0x0
  .iplt          0x0000000000000000        0x0 init.o
 
-.rel.dyn        0x0000000000000354        0x0
+.rel.dyn        0x000000000000031c        0x0
  .rel.iplt      0x0000000000000000        0x0 init.o
                 0x0000000010000000                . = ORIGIN (ram)
 
-.data           0x0000000010000000        0x0 load address 0x0000000000000354
-                0x0000000000000354                INIT_DATA_VALUES = LOADADDR (.data)
+.data           0x0000000010000000        0x0 load address 0x000000000000031c
+                0x000000000000031c                INIT_DATA_VALUES = LOADADDR (.data)
                 0x0000000010000000                INIT_DATA_START = .
  *(.data)
  .data          0x0000000010000000        0x0 init.o
@@ -57,10 +57,10 @@ LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/
                 0x0000000010000000                INIT_DATA_END = .
                 0x0000000010000000                BSS_START = .
 
-.igot.plt       0x0000000010000000        0x0 load address 0x0000000000000354
+.igot.plt       0x0000000010000000        0x0 load address 0x000000000000031c
  .igot.plt      0x0000000000000000        0x0 init.o
 
-.bss            0x0000000010000000        0x0 load address 0x0000000000000354
+.bss            0x0000000010000000        0x0 load address 0x000000000000031c
  *(.bss)
  .bss           0x0000000010000000        0x0 init.o
  .bss           0x0000000010000000        0x0 main.o
@@ -81,9 +81,9 @@ OUTPUT(main.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000020       0x20 main.o
 
-.debug_line     0x0000000000000000       0xbc
+.debug_line     0x0000000000000000       0xc3
  .debug_line    0x0000000000000000       0x53 init.o
- .debug_line    0x0000000000000053       0x69 main.o
+ .debug_line    0x0000000000000053       0x70 main.o
 
 .debug_str      0x0000000000000000      0x168
  .debug_str     0x0000000000000000      0x13c init.o
