@@ -42,7 +42,7 @@ int ReadADC()
     // Wait for conversion to complete
     while((AD0GDR&BIT31)==0);
     // return the result
-    return ((AD0GDR>>8));
+    return ((AD0GDR>>8));  //Shift from 6 for all 10bits [6:15]
 }
 void Output(uint8_t data)
 {
@@ -67,6 +67,6 @@ int main()
 while(1) 
     {
         Output(ReadADC());
-	delay(200);
+	delay(23);
     }    
 }
