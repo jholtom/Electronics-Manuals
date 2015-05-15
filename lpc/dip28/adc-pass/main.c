@@ -4,9 +4,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define adelay 500 //Half a second delay for the audio
-#define delaysamples (adelay * 44.1) //Its a delayed sample
-#define decay 0.5
+#define a 0.7
 void delay(int dly)
 {
 	while (dly--);
@@ -55,17 +53,13 @@ void Output(uint8_t data)
 int main()
 {	
 	ConfigPins();
-
-	while(1) 
-	{
-		data = ReadADC();
-		int bufloc = 0;
-		uint8_t buffer[50000];	
-		for (int i = 0; i < 50000 - delaysamples; i++)
-		{
-
-		} 
-		Output(out);
-		delay(23);
-	}    
+	uint8_t data = 0;
+	uint8_t prev = 0;
+	while(1){
+	data = ReadADC();
+	uint8_t out = a*data + (1-a)*prev;
+	prev = out;
+	Output(out);
+	delay(23);
+	}
 }

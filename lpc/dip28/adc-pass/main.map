@@ -1,3 +1,27 @@
+Archive member included because of file (symbol)
+
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+                              main.o (__aeabi_d2uiz)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+                              main.o (__aeabi_dadd)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+                              main.o (__aeabi_dmul)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o) (__aeabi_dsub)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o) (__aeabi_d2iz)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+                              main.o (__aeabi_i2d)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o) (__aeabi_dcmpge)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o) (__clzsi2)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o) (__eqdf2)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o) (__gedf2)
+/Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+                              /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o) (__ledf2)
 
 Memory Configuration
 
@@ -13,7 +37,7 @@ LOAD main.o
 LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a
                 0x0000000000000000                . = ORIGIN (flash)
 
-.text           0x0000000000000000      0x2a8
+.text           0x0000000000000000     0x19b8
  *(.vectors)
  .vectors       0x0000000000000000       0xbc init.o
                 0x0000000000000000                Vectors
@@ -22,58 +46,116 @@ LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/
                 0x00000000000000bc                clock_init
                 0x0000000000000108                init
                 0x0000000000000180                Default_Handler
- .text          0x0000000000000188      0x120 main.o
+ .text          0x0000000000000188      0x1ac main.o
                 0x0000000000000188                delay
                 0x00000000000001a4                ConfigPins
                 0x0000000000000234                ReadADC
                 0x0000000000000268                Output
                 0x0000000000000288                main
+ .text          0x0000000000000334       0x3c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+                0x0000000000000334                __fixunsdfsi
+                0x0000000000000334                __aeabi_d2uiz
+ .text          0x0000000000000370      0x650 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+                0x0000000000000370                __aeabi_dadd
+ .text          0x00000000000009c0      0x534 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+                0x00000000000009c0                __aeabi_dmul
+ .text          0x0000000000000ef4      0x6f4 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+                0x0000000000000ef4                __aeabi_dsub
+ .text          0x00000000000015e8       0x6c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+                0x00000000000015e8                __aeabi_d2iz
+ .text          0x0000000000001654       0x78 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+                0x0000000000001654                __aeabi_i2d
+ .text          0x00000000000016cc       0x7c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                0x00000000000016cc                __aeabi_cdrcmple
+                0x00000000000016dc                __aeabi_cdcmple
+                0x00000000000016dc                __aeabi_cdcmpeq
+                0x00000000000016ec                __aeabi_dcmpeq
+                0x00000000000016f8                __aeabi_dcmplt
+                0x000000000000170c                __aeabi_dcmple
+                0x0000000000001720                __aeabi_dcmpgt
+                0x0000000000001734                __aeabi_dcmpge
+ .text          0x0000000000001748       0x3c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+                0x0000000000001748                __clzsi2
+ .text          0x0000000000001784       0x88 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+                0x0000000000001784                __eqdf2
+                0x0000000000001784                __nedf2
+ .text          0x000000000000180c       0xe0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+                0x000000000000180c                __gtdf2
+                0x000000000000180c                __gedf2
+ .text          0x00000000000018ec       0xcc /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+                0x00000000000018ec                __ltdf2
+                0x00000000000018ec                __ledf2
 
-.glue_7         0x00000000000002a8        0x0
+.glue_7         0x00000000000019b8        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x00000000000002a8        0x0
+.glue_7t        0x00000000000019b8        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x00000000000002a8        0x0
+.vfp11_veneer   0x00000000000019b8        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x00000000000002a8        0x0
+.v4_bx          0x00000000000019b8        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x00000000000002a8        0x0
+.iplt           0x00000000000019b8        0x0
  .iplt          0x0000000000000000        0x0 init.o
 
-.rel.dyn        0x00000000000002a8        0x0
+.rel.dyn        0x00000000000019b8        0x0
  .rel.iplt      0x0000000000000000        0x0 init.o
+
+.rodata         0x00000000000019b8       0x40
+ .rodata        0x00000000000019b8       0x40 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
                 0x0000000010000000                . = ORIGIN (ram)
 
-.data           0x0000000010000000        0x0 load address 0x00000000000002a8
-                0x00000000000002a8                INIT_DATA_VALUES = LOADADDR (.data)
+.data           0x0000000010000000        0x0 load address 0x00000000000019f8
+                0x00000000000019f8                INIT_DATA_VALUES = LOADADDR (.data)
                 0x0000000010000000                INIT_DATA_START = .
  *(.data)
  .data          0x0000000010000000        0x0 init.o
  .data          0x0000000010000000        0x0 main.o
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+ .data          0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
                 0x0000000010000000                INIT_DATA_END = .
                 0x0000000010000000                BSS_START = .
 
-.igot.plt       0x0000000010000000        0x0 load address 0x00000000000002a8
+.igot.plt       0x0000000010000000        0x0 load address 0x00000000000019f8
  .igot.plt      0x0000000000000000        0x0 init.o
 
-.bss            0x0000000010000000        0x0 load address 0x00000000000002a8
+.bss            0x0000000010000000        0x0 load address 0x00000000000019f8
  *(.bss)
  .bss           0x0000000010000000        0x0 init.o
  .bss           0x0000000010000000        0x0 main.o
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+ .bss           0x0000000010000000        0x0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
                 0x0000000010000000                BSS_END = .
 OUTPUT(main.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000      0x229
+.debug_info     0x0000000000000000      0x25e
  .debug_info    0x0000000000000000      0x116 init.o
- .debug_info    0x0000000000000116      0x113 main.o
+ .debug_info    0x0000000000000116      0x148 main.o
 
-.debug_abbrev   0x0000000000000000      0x19d
+.debug_abbrev   0x0000000000000000      0x1c4
  .debug_abbrev  0x0000000000000000       0xe8 init.o
- .debug_abbrev  0x00000000000000e8       0xb5 main.o
+ .debug_abbrev  0x00000000000000e8       0xdc main.o
 
 .debug_aranges  0x0000000000000000       0x40
  .debug_aranges
@@ -81,15 +163,15 @@ OUTPUT(main.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000020       0x20 main.o
 
-.debug_line     0x0000000000000000      0x17c
+.debug_line     0x0000000000000000      0x18d
  .debug_line    0x0000000000000000       0x53 init.o
- .debug_line    0x0000000000000053      0x129 main.o
+ .debug_line    0x0000000000000053      0x13a main.o
 
-.debug_str      0x0000000000000000      0x1a7
+.debug_str      0x0000000000000000      0x1ac
  .debug_str     0x0000000000000000      0x12f init.o
                                         0x141 (size before relaxing)
- .debug_str     0x000000000000012f       0x78 main.o
-                                        0x178 (size before relaxing)
+ .debug_str     0x000000000000012f       0x7d main.o
+                                        0x17d (size before relaxing)
 
 .comment        0x0000000000000000       0x70
  .comment       0x0000000000000000       0x70 init.o
@@ -102,10 +184,41 @@ OUTPUT(main.elf elf32-littlearm)
                 0x0000000000000000       0x31 init.o
  .ARM.attributes
                 0x0000000000000031       0x31 main.o
+ .ARM.attributes
+                0x0000000000000062       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+ .ARM.attributes
+                0x000000000000008e       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+ .ARM.attributes
+                0x00000000000000ba       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+ .ARM.attributes
+                0x00000000000000e6       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+ .ARM.attributes
+                0x0000000000000112       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+ .ARM.attributes
+                0x000000000000013e       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+ .ARM.attributes
+                0x000000000000016a       0x1e /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x0000000000000188       0x1e /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+ .ARM.attributes
+                0x00000000000001a6       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+ .ARM.attributes
+                0x00000000000001d2       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+ .ARM.attributes
+                0x00000000000001fe       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
 
-.debug_frame    0x0000000000000000      0x10c
+.debug_frame    0x0000000000000000      0x2f0
  .debug_frame   0x0000000000000000       0x68 init.o
- .debug_frame   0x0000000000000068       0xa4 main.o
+ .debug_frame   0x0000000000000068       0xac main.o
+ .debug_frame   0x0000000000000114       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+ .debug_frame   0x0000000000000140       0x38 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+ .debug_frame   0x0000000000000178       0x3c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+ .debug_frame   0x00000000000001b4       0x3c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+ .debug_frame   0x00000000000001f0       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+ .debug_frame   0x000000000000021c       0x2c /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+ .debug_frame   0x0000000000000248       0x38 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+ .debug_frame   0x0000000000000280       0x38 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+ .debug_frame   0x00000000000002b8       0x38 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
 
 Cross Reference Table
 
@@ -120,6 +233,42 @@ INIT_DATA_VALUES                                  init.o
 Output                                            main.o
 ReadADC                                           main.o
 Vectors                                           init.o
+__aeabi_cdcmpeq                                   /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_cdcmple                                   /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_cdrcmple                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_d2iz                                      /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(fixdfsi.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+__aeabi_d2uiz                                     /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+                                                  main.o
+__aeabi_dadd                                      /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+                                                  main.o
+__aeabi_dcmpeq                                    /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_dcmpge                                    /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+__aeabi_dcmpgt                                    /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_dcmple                                    /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_dcmplt                                    /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__aeabi_dmul                                      /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+                                                  main.o
+__aeabi_dsub                                      /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+__aeabi_i2d                                       /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+                                                  main.o
+__clzsi2                                          /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_clzsi2.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(floatsidf.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(subdf3.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(muldf3.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(adddf3.o)
+__eqdf2                                           /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__fixunsdfsi                                      /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_fixunsdfsi.o)
+__gedf2                                           /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__gtdf2                                           /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(gedf2.o)
+__ledf2                                           /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+                                                  /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_arm_cmpdf2.o)
+__ltdf2                                           /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(ledf2.o)
+__nedf2                                           /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(eqdf2.o)
 clock_init                                        init.o
 delay                                             main.o
 init                                              init.o
