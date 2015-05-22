@@ -11,12 +11,13 @@ LIBSPEC=-L /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none
 
 # List the object files involved in this project
 OBJS=	init.o \
+	serial.o \
 	main.o 
 
 # The default 'target' (output) is main.elf and it depends on the object files being there.
 # These object files are linked together to create main.elf
 main.elf : $(OBJS)
-	$(LD) $(OBJS) $(LIBSPEC) -lgcc -T linker_script.ld --cref -Map main.map -nostartfiles -o main.elf
+	$(LD) $(OBJS) $(LIBSPEC) -lgcc -T linker_script.ld --cref -Map main.map -nostartfiles -o main.elf 
 	arm-none-eabi-objcopy -O ihex main.elf main.hex
 	@echo "Assuming all went well..."
 	@echo "Program the chip as follows: lpc21isp main.hex /dev/ttyUSB0 9600 12000000"
@@ -25,9 +26,11 @@ main.elf : $(OBJS)
 main.o: main.c
 	$(CC) -c $(CCFLAGS) main.c -o main.o
 
-
 init.o: init.c
 	$(CC) -c $(CCFLAGS) init.c -o init.o
+
+serial.o: serial.c
+	$(CC) -c $(CCFLAGS) serial.c -o serial.o
 
 # if someone types in 'make clean' then remove all object files and executables
 # associated wit this project

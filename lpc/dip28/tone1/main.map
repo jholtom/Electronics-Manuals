@@ -19,7 +19,7 @@ LOAD main.o
 LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a
                 0x0000000000000000                . = ORIGIN (flash)
 
-.text           0x0000000000000000      0x508
+.text           0x0000000000000000      0x4f8
  *(.vectors)
  .vectors       0x0000000000000000       0xc0 init.o
                 0x0000000000000000                Vectors
@@ -28,42 +28,42 @@ LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/
                 0x00000000000000c0                clock_init
                 0x000000000000010c                init
                 0x0000000000000184                Default_Handler
- .text          0x000000000000018c      0x198 main.o
+ .text          0x000000000000018c      0x188 main.o
                 0x000000000000018c                ConfigPins
                 0x00000000000001e0                initPWM
                 0x000000000000023c                setFrequency
                 0x000000000000028c                setVolume
                 0x00000000000002c4                delay
                 0x00000000000002e0                main
- .text          0x0000000000000324      0x1e0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
-                0x0000000000000324                __aeabi_idiv
-                0x0000000000000324                __divsi3
-                0x00000000000004f0                __aeabi_idivmod
- .text          0x0000000000000504        0x4 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x0000000000000504                __aeabi_ldiv0
-                0x0000000000000504                __aeabi_idiv0
+ .text          0x0000000000000314      0x1e0 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_divsi3.o)
+                0x0000000000000314                __aeabi_idiv
+                0x0000000000000314                __divsi3
+                0x00000000000004e0                __aeabi_idivmod
+ .text          0x00000000000004f4        0x4 /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/4.9.3/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x00000000000004f4                __aeabi_ldiv0
+                0x00000000000004f4                __aeabi_idiv0
 
-.glue_7         0x0000000000000508        0x0
+.glue_7         0x00000000000004f8        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000508        0x0
+.glue_7t        0x00000000000004f8        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000508        0x0
+.vfp11_veneer   0x00000000000004f8        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000508        0x0
+.v4_bx          0x00000000000004f8        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000508        0x0
+.iplt           0x00000000000004f8        0x0
  .iplt          0x0000000000000000        0x0 init.o
 
-.rel.dyn        0x0000000000000508        0x0
+.rel.dyn        0x00000000000004f8        0x0
  .rel.iplt      0x0000000000000000        0x0 init.o
                 0x0000000010000000                . = ORIGIN (ram)
 
-.data           0x0000000010000000        0x0 load address 0x0000000000000508
-                0x0000000000000508                INIT_DATA_VALUES = LOADADDR (.data)
+.data           0x0000000010000000        0x0 load address 0x00000000000004f8
+                0x00000000000004f8                INIT_DATA_VALUES = LOADADDR (.data)
                 0x0000000010000000                INIT_DATA_START = .
  *(.data)
  .data          0x0000000010000000        0x0 init.o
@@ -73,10 +73,10 @@ LOAD /Users/jholtom/Projects/gcc-arm-none-eabi-4_9-2015q1/lib/gcc/arm-none-eabi/
                 0x0000000010000000                INIT_DATA_END = .
                 0x0000000010000000                BSS_START = .
 
-.igot.plt       0x0000000010000000        0x0 load address 0x0000000000000508
+.igot.plt       0x0000000010000000        0x0 load address 0x00000000000004f8
  .igot.plt      0x0000000000000000        0x0 init.o
 
-.bss            0x0000000010000000        0x0 load address 0x0000000000000508
+.bss            0x0000000010000000        0x0 load address 0x00000000000004f8
  *(.bss)
  .bss           0x0000000010000000        0x0 init.o
  .bss           0x0000000010000000        0x0 main.o
@@ -99,15 +99,15 @@ OUTPUT(main.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000020       0x20 main.o
 
-.debug_line     0x0000000000000000       0xb8
+.debug_line     0x0000000000000000       0xbe
  .debug_line    0x0000000000000000       0x53 init.o
- .debug_line    0x0000000000000053       0x65 main.o
+ .debug_line    0x0000000000000053       0x6b main.o
 
-.debug_str      0x0000000000000000      0x16c
- .debug_str     0x0000000000000000      0x122 init.o
-                                        0x127 (size before relaxing)
- .debug_str     0x0000000000000122       0x4a main.o
-                                         0xe9 (size before relaxing)
+.debug_str      0x0000000000000000      0x183
+ .debug_str     0x0000000000000000      0x139 init.o
+                                        0x13e (size before relaxing)
+ .debug_str     0x0000000000000139       0x4a main.o
+                                        0x100 (size before relaxing)
 
 .comment        0x0000000000000000       0x70
  .comment       0x0000000000000000       0x70 init.o

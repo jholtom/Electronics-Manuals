@@ -23,8 +23,8 @@ void initPWM()
 	// Use match register 3 as period register because its output
 	// is not pinned out.  A value of 48000000 produces a frequency of 1Hz
 	// so, to generate a 30kHz pwm signal, set MR3 = 48000000/30000 = 1600	
-	TMR32B1MR3 = 1600; 
-	TMR32B1MR0 = 1600; // Zero output to begin with
+	TMR32B1MR3 = 384; 
+	TMR32B1MR0 = 384; // Zero output to begin with
 	TMR32B1MCR = BIT10; // Reset TC on match with MR3
 	TMR32B1TC = 0 ; // Zero the counter to begin with
 	TMR32B1PWMC = BIT0; // Enable PWM on channel 0
@@ -55,16 +55,14 @@ void delay(int dly)
 }
 int main()
 {	
-	int Frequency=262; // middle C
+	int Frequency=125; // middle C
 	int Volume = 0;
 	ConfigPins();
 	initPWM();
 	setFrequency(Frequency);
+	setVolume(100);
 	while(1) 
 	{
-		setVolume(Volume++);
-		if (Volume >100)
-			Volume = 0;
 		delay(10000);
 	}    
 }
