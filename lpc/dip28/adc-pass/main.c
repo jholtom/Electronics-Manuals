@@ -18,46 +18,27 @@ void Output(uint8_t data)
 }
 double sine_taylor(double x)
 {
-    double x2 = x*x;
-    double x4 = x2*x2;
-    double t1 = x * (1.0 - x2 / (2*3));
-    double x5 = x * x4;
-    double t2 = x5 * (1.0 - x2 / (6*7)) / (1.0* 2*3*4*5);
-    double x9 = x5 * x4;
-    double t3 = x9 * (1.0 - x2 / (10*11)) / (1.0* 2*3*4*5*6*7*8*9);
-    double x13 = x9 * x4;
-    double t4 = x13 * (1.0 - x2 / (14*15)) / (1.0* 2*3*4*5*6*7*8*9*10*11*12*13);
-    double result = t4;
-    result += t3;
-    result += t2;
-    result += t1;
-    return result;
+	double x2 = x*x;
+	double x4 = x2*x2;
+	double t1 = x * (1.0 - x2 / (2*3));
+	double x5 = x * x4;
+	double t2 = x5 * (1.0 - x2 / (6*7)) / (1.0* 2*3*4*5);
+	double x9 = x5 * x4;
+	double t3 = x9 * (1.0 - x2 / (10*11)) / (1.0* 2*3*4*5*6*7*8*9);
+	double x13 = x9 * x4;
+	double t4 = x13 * (1.0 - x2 / (14*15)) / (1.0* 2*3*4*5*6*7*8*9*10*11*12*13);
+	double result = t4;
+	result += t3;
+	result += t2;
+	result += t1;
+	return result;
 }
 int cnt = 0; //counting for the sine wave generation
 void SysTick(void){
-	uint8_t data = 0;
-	uint8_t out = 0;
-	float currentPhase = 0.0;
-	int val = 0;
-	char str[5];
-	data = ReadADC();
-	out = (uint8_t) (data * sine_taylor(currentPhase));
-	if(cnt == TABLE_SIZE)
-	{
-		cnt = 0;
-	}
-	else{
-	cnt += 1;
-	}
-	//	temp = data & 0x3ff;
-	//	dec_to_str(str,temp,3u);	
-	//	printString(str);
-	//	printString("\r\n");
-	Output(out);
 }
 void initSysTick(){
 	SYST_CSR |= (BIT0+BIT1+BIT2);
-	SYST_RVR=1088-1;
+	SYST_RVR=48000-1;
 	SYST_CVR=5;
 	enable_interrupts();
 }
@@ -112,11 +93,34 @@ int ReadADC()
 }
 int main()
 {	
-	initSysTick();
+	//	initSysTick();
 	//	initUART();
 	//	enable_interrupts();
 	ConfigPins();
 	while(1){
-		delay(10);
+		uint8_t data = 0;
+		uint8_t out = 0;
+		float currentPhase = 0.0;
+		int val = 0;
+		char str[5];
+		data = ReadADC();
+		//out = (uint8_t) (data * (uint8_t) sine_taylor(currentPhase));
+		double temp = 0.0;
+	        temp = sine_taylor(currentPhase);
+		out = (uint8_t) temp;	
+		currentPhase += phaseIncrement;
+		if(cnt == TABLE_SIZE)
+		{
+			cnt = 0;
+		}
+		else{
+			cnt += 1;
+		}
+		//	temp = data & 0x3ff;
+		//	dec_to_str(str,temp,3u);	
+		//	printString(str);
+		//	printString("\r\n");
+		Output(out);
+		delay(100);
 	}
 }
